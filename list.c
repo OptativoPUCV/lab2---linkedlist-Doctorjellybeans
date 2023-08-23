@@ -57,7 +57,7 @@ void * lastList(List * list) {
     return NULL;
   }
   
-  while (actual->next){
+  while (actual->next != NULL){
     actual = actual->next;
   }
 
