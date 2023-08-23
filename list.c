@@ -70,7 +70,7 @@ void * prevList(List * list) {
   if (list->current == list->head){
     return NULL;
   }
-  //printf("current:%d prev:%d",*((int*)list->current->data),*((int*)list->current->prev->data));
+  printf("current:%d prev:%d",*((int*)list->current->data),*((int*)list->current->prev->data));
   list->current = list->current->prev;
   return list->current->data;
 }
