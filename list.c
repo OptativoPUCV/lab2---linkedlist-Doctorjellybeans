@@ -112,10 +112,6 @@ void pushCurrent(List * list, void * data) {
     nuevoNodo->prev = list->current;
     list->current->next = nuevoNodo;
 
-    if (list->current == list->tail){
-      list->tail = nuevoNodo;
-    }
-
     list->current = nuevoNodo;
   }
 
