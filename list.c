@@ -67,7 +67,7 @@ void * lastList(List * list) {
 }
 
 void * prevList(List * list) {
-  if (list->current == NULL){
+  if (list->current == NULL || list->current == list->head){
     return NULL;
   }
   //printf("current:%d prev:%d",*((int*)list->current->data),*((int*)list->current->prev->data));
