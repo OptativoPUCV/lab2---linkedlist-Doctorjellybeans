@@ -62,7 +62,7 @@ void * lastList(List * list) {
   }
 
   list->current = actual;
-  printf("%d",*((int*)list->current->data));
+  //printf("%d",*((int*)list->current->data));
   return list->current->data;
 }
 
@@ -70,7 +70,7 @@ void * prevList(List * list) {
   if (list->current == NULL){
     return NULL;
   }
-  printf("current:%d prev:%d",*((int*)list->current->data),*((int*)list->current->prev->data));
+  //printf("current:%d prev:%d",*((int*)list->current->data),*((int*)list->current->prev->data));
   list->current = list->current->prev;
   return list->current->data;
 }
