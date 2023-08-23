@@ -37,7 +37,7 @@ void * firstList(List * list) {
   if (list->current == NULL){
     return NULL;
   } else {
-    list->current = list->current->next;
+    list->current = list->head;
     if (list->current != NULL) {
       return &(list->current->data);
     } else {
