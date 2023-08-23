@@ -166,3 +166,8 @@ list.c:70:24: error: ‘NULLsh’ undeclared (first use in this function); did y
 list.c:70:24: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 a55f32b
+Wed 23 Aug 2023 08:34:11 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+85ed6ba
