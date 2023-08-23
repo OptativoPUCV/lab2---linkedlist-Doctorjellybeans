@@ -52,11 +52,26 @@ void * nextList(List * list) {
 }
 
 void * lastList(List * list) {
+  Node *actual = list->head;
+  if (actual == NULL){
     return NULL;
+  }
+  
+  while (actual){
+    actual = actual->next;
+  }
+
+  list->current = actual;
+  return actual;
 }
 
 void * prevList(List * list) {
+  if (list->current->prev == NULL){
     return NULL;
+  }
+
+  list->current = list->current->prev;
+  return list->current;
 }
 
 void pushFront(List * list, void * data) {
