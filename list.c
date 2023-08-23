@@ -34,17 +34,21 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-  if (list->head == NULL) {
+    if (list->head == NULL) {
         return NULL; // La lista está vacía
-  } else {
-       list->current = list->head; // Actualizamos current para que apunte al primer nodo
-       return &(list->head->data); // Retornamos un puntero al dato del primer nodo
-  }
+    } else {
+        list->current = list->head; // Actualizamos current para que apunte al primer nodo
+        return &(list->head->data); // Retornamos un puntero al dato del primer nodo
+    }
 }
 
 void * nextList(List * list) {
-  list->current = list->current->next;
-  return &(list->current->data);
+    if (list->current == NULL || list->current->next == NULL) {
+        return NULL; // No hay un nodo siguiente o current no está definido
+    } else {
+        list->current = list->current->next; // Actualizamos current para que apunte al siguiente nodo
+        return &(list->current->data); // Retornamos un puntero al dato del siguiente nodo
+    }
 }
 
 void * lastList(List * list) {
