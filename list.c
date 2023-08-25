@@ -35,8 +35,8 @@ List * createList() {
 
 // Función para obtener el primer elemento de la lista
 void * firstList(List * list) {
-    if (list->head == NULL) {
-        return NULL; // La lista está vacía
+    if (list->head == NULL) { // La lista está vacía
+        return NULL; 
     }
 
     list->current = list->head; // Se establece el nodo actual como el primer nodo
@@ -85,7 +85,7 @@ void pushFront(List * list, void * data) {
   if (list->head == NULL){ // Si la lista está vacía, el nuevo nodo se convierte en la cabeza y la cola
     list->head = nuevoNodo;
     list->tail = nuevoNodo;
-  } else {
+  } else { // en caso contrario se hacen las conexiones necesarias entre los nodos (cabeza y nuevo nodo)
     nuevoNodo->next = list->head;
     list->head->prev = nuevoNodo;
     list->head = nuevoNodo;
