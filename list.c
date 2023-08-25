@@ -29,44 +29,47 @@ Node * createNode(void * data) {
 }
 
 List * createList() {
-  List *lista = (List*)malloc(sizeof(List));
+  List *lista = (List*)malloc(sizeof(List)); // se reserva memoria para la lista
   return lista;
 }
 
+// Función para obtener el primer elemento de la lista
 void * firstList(List * list) {
-  if (list->head == NULL){
-    return NULL;
-  }
-  
-  list->current = list->head;
-  return list->current->data;
+    if (list->head == NULL) {
+        return NULL; // La lista está vacía
+    }
+
+    list->current = list->head; // Se establece el nodo actual como el primer nodo
+    return list->current->data; // Se devuelve el dato del nodo actual
 }
 
+// Función para obtener el siguiente elemento de la lista
 void * nextList(List * list) {
   if (list->current == NULL || list->current->next == NULL){
-    return NULL;
+    return NULL; // No hay un siguiente elemento
   }
   
-  list->current = list->current->next;
-  return list->current->data;
+  list->current = list->current->next; // se mueve al siguiente de nodo
+  return list->current->data; // retorna e; dato del nodo actual
 }
 
-void * lastList(List * list) {
+// Función para obtener el último elemento de la lista
+void * lastList(List * list) { 
   Node *actual = list->head;
   if (actual == NULL){
-    return NULL;
+    return NULL; // La lista está vacía
   }
   
-  while (actual->next != NULL){
+  while (actual->next != NULL){ // itera hasta el ultimo elemento
     actual = actual->next;
   }
 
-  list->current = actual;
-  //printf("%d",*((int*)list->current->data));
-  return list->current->data;
+  list->current = actual; // Se establece el nodo actual como el último nodo
+  //printf("%d",*((int*)list->current->data)); esto lo use para comprobar la lectura de data
+  return list->current->data; // Se devuelve el dato del nodo actual
 }
 
-void * prevList(List * list) {
+void * prevList(List * list) { //
   if (list->current == NULL || list->current == list->head){
     return NULL;
   }
